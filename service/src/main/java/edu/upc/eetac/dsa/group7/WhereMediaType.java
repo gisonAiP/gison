@@ -11,4 +11,5 @@ public class WhereMediaType {
     public final static String WHERE_COMMENT = "application/vnd.dsa.where.restaurant.comment+json";
     public final static String WHERE_COMMENT_COLLECTION = "application/vnd.dsa.where.restaurant.comment.collection+json";
     public final static String WHERE_ROOT = "application/vnd.dsa.where.root+json";
+
 }

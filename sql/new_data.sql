@@ -63,16 +63,16 @@ CREATE TABLE like_restaurant(
 );
 
 
-CREATE TABLE kategoria(
+CREATE TABLE categories(
 	id BINARY(16) NOT NULL,
-	nazwa VARCHAR(100) NOT NULL,
+	name VARCHAR(100) NOT NULL,
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE uwaga(
+CREATE TABLE attentions(
 	id BINARY (16) NOT NULL,
-	longi FLOAT( 10, 6 ) NOT NULL,
-	lati FLOAT( 10, 6 ) NOT NULL,
+	lng FLOAT( 10, 6 ) NOT NULL,
+	lat FLOAT( 10, 6 ) NOT NULL,
 	id_kat BINARY(16) NOT NULL,
 	uwaga VARCHAR(255) NOT NULL,
 	id_wlas BINARY(16) NOT NULL,
