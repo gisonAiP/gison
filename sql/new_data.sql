@@ -69,7 +69,7 @@ CREATE TABLE categories(
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE attentions(
+CREATE TABLE notes(
 	id BINARY (16) NOT NULL,
 	lng FLOAT( 10, 6 ) NOT NULL,
 	lat FLOAT( 10, 6 ) NOT NULL,
@@ -113,3 +113,15 @@ insert into users (id, loginid, password, email, fullname) values (UNHEX(REPLACE
 select @idagnieszka := id from users where loginid='agnieszka';
 insert into user_roles (userid, role) values (@idagnieszka, 'owner');
 insert into auth_tokens (userid, token) values (@idagnieszka, UNHEX(REPLACE(UUID(),'-','')));
+
+# Create categories1 -->
+insert into categories (id,nazwa) values (UNHEX(REPLACE(UUID(),'-','')), 'kategoria1');
+select @idkategoria1 := id from categories where nazwa='kategoria1';
+
+# Create categories2-->
+insert into categories (id,nazwa) values (UNHEX(REPLACE(UUID(),'-','')), 'kategoria2');
+select @idkategoria2:= id from categories where nazwa='kategoria2';
+
+# Create kategori3-->
+insert into categories (id,nazwa) values (UNHEX(REPLACE(UUID(),'-','')), 'kategoria3');
+select @idkategoria3:= id from categories where nazwa='kategoria3';
