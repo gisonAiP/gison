@@ -2,6 +2,8 @@ package edu.upc.eetac.dsa.group7;
 
 import edu.upc.eetac.dsa.group7.dao.NoteDAO;
 import edu.upc.eetac.dsa.group7.dao.NoteDAOImp;
+import edu.upc.eetac.dsa.group7.dao.UserDAO;
+import edu.upc.eetac.dsa.group7.dao.UserDAOImpl;
 import edu.upc.eetac.dsa.group7.entity.AuthToken;
 import edu.upc.eetac.dsa.group7.entity.Note;
 import edu.upc.eetac.dsa.group7.entity.NoteCollection;
@@ -28,33 +30,35 @@ public class NoteResource {
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(WhereMediaType.WHERE_NOTE)
-    //Create a restaurant giving title, comment and like/dislike (+1/-1)
-    public Response createNote(@PathParam("id_katid") String id_katid, @FormParam("title") String title, @FormParam("note") String noteBody, @Context UriInfo uriInfo) throws URISyntaxException {
-        if (title == null || noteBody == null) {
-            //check if all the parameters aren't null
+    public Note createNote(@FormParam("lng") Float lng, @FormParam("lat") Float lat, @FormParam("name") String name, @FormParam("uwaga") String uwaga, @Context UriInfo uriInfo) throws URISyntaxException {
+        if (lng == null || lat == null || name == null || uwaga == null) {
             throw new BadRequestException("all parameters are mandatory");
+            //check if all the parameters are correct
         }
-        //??? cos tu bedzie nie tak
 
-        //initiates all the variables
+
+        //nitiate the needed objects
         NoteDAO noteDAO = new NoteDAOImp();
-        Note note = null;
-        RestaurantDAO restaurantDAO = new RestaurantDAOImpl();
-        Restaurant restaurant = null;
+        //UserDAO userDAO = new UserDAOImpl();
+        Note note;
         AuthToken authenticationToken = null;
-        try {
-            //call the method to create a restaurant
-            //using the securityContext we can extract the id of the creator
-            note = noteDAO.createNote(securityContext.getUserPrincipal().getName(), id_katid, title, noteBody);
-            restaurant = restaurantDAO.voteRestaurant(id_katid, likes);
-        } catch (SQLException e) {
-            //send an error if the insertion fails
-            throw new InternalServerErrorException();
-        }
-        URI uri = new URI(uriInfo.getAbsolutePath().toString() + "/" + note.getId());
-        //send back the created comment
-        return Response.created(uri).type(WhereMediaType.WHERE_COMMENT).entity(note).build();
+        //try {
+         //if (userDAO.owner(securityContext.getUserPrincipal().getName()) == true || userDAO.admin(securityContext.getUserPrincipal().getName()) == true) {
+        //call the function to add the restaurant to database
+          //  restaurant = restaurantDAO.createRestaurant(name, description, avgprice, securityContext.getUserPrincipal().getName(), address, phone, lat, lng);
+        // } else {
+             //throw an error if you don't have a owner profile
+         //throw new BadRequestException("You must have an owner profile to create a restaurant!");
+        // }
+
+
+        //URI uri = new URI(uriInfo.getAbsolutePath().toString() + "/" + restaurant.getId());
+         return note;
+
     }
+
+
+
 
 
     @GET
