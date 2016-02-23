@@ -39,8 +39,8 @@ public class NoteResource {
         //initiates all the variables
         NoteDAO noteDAO = new NoteDAOImp();
         Note note = null;
-        //RestaurantDAO restaurantDAO = new RestaurantDAOImpl();
-       // Restaurant restaurant = null;
+        RestaurantDAO restaurantDAO = new RestaurantDAOImpl();
+        Restaurant restaurant = null;
         AuthToken authenticationToken = null;
         try {
             //call the method to create a restaurant
