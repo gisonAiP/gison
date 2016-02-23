@@ -1,0 +1,522 @@
+{
+	"id": "322df718-ca1d-0a70-53bb-1f3917870e99",
+	"name": "Where to eat in Barcelona?",
+	"description": "",
+	"order": [
+		"d0a7919d-b8dd-0505-b902-0c3d231cc166",
+		"e55cc9dc-23a1-8cb7-8a6f-fc680ac5c417"
+	],
+	"folders": [
+		{
+			"id": "a7e5fbe3-7bba-4b38-c41a-73dd6ce9a1fe",
+			"name": "Comments",
+			"description": "",
+			"order": [
+				"cdc2a46f-3a4d-4853-d5b4-1f3d5501d506",
+				"2a7130d9-5eeb-186a-93a9-af55bd259422",
+				"65f2fbe7-834d-be63-04a9-6affb4da6f1b",
+				"6baac33b-22f8-0c46-73b3-ac4a63a0be26",
+				"7f2b819d-c272-dca4-dbf6-04674ac6464a"
+			],
+			"owner": "165619"
+		},
+		{
+			"id": "b0cb8ef8-6f33-e13f-21a9-ea96d9b690bd",
+			"name": "Links",
+			"description": "",
+			"order": [
+				"40d3a8fe-22f9-4b7c-60e7-e206dd3cb5f6"
+			],
+			"owner": "165619"
+		},
+		{
+			"id": "822109fb-0fa7-6681-55bc-5afbd170b727",
+			"name": "Restaurant",
+			"description": "",
+			"order": [
+				"4fb1ac5d-93e2-8687-e0b1-171086b14c66",
+				"7432ad5e-525b-74cc-0e50-26821bccc440",
+				"c2d7b177-00bc-e99b-c2cd-025ad444cddd",
+				"8a3ba960-2d47-0d1b-100f-040d5001a78b",
+				"0184ffc3-3834-a4b5-533c-5918ef36a5b6",
+				"d72ddb87-7934-88bd-908e-16a22d610be8"
+			],
+			"owner": "165619",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99"
+		},
+		{
+			"id": "eb0442bf-28ba-6e49-6492-411343d5756d",
+			"name": "Users",
+			"description": "",
+			"order": [
+				"2ac7fca1-9ef2-bd7c-7f02-52fdf9a70696",
+				"50dbb4e7-fb80-42c4-8d69-8b7cfe2f3891",
+				"c689eb24-1816-9e25-1886-591652335c6c",
+				"cf0ee4da-2aa2-dc92-be76-57628c8203e6"
+			],
+			"owner": "165619"
+		}
+	],
+	"timestamp": 1448275420347,
+	"owner": "165619",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "0184ffc3-3834-a4b5-533c-5918ef36a5b6",
+			"headers": "X-Auth-Token: 45D72D6CAE4511E58DC9FAF7E5943960\nContent-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:8080/where/restaurant/027FD3FA9E5211E5AD7C137926543200",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1451549768954,
+			"name": "Delete restaurant",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "2a7130d9-5eeb-186a-93a9-af55bd259422",
+			"headers": "",
+			"url": "http://localhost:8080/where/restaurant/1D228CD6B95811E5A7A1E7C4225B61D6/comments/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452717905756,
+			"name": "Get CommentsCollection",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "2ac7fca1-9ef2-bd7c-7f02-52fdf9a70696",
+			"headers": "",
+			"url": "http://147.83.7.206:8080/where/users",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "loginid",
+					"value": "SpongeBob",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1234",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "spongebob@bikinibottom.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fullname",
+					"value": "Spongebob Squarepants",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1451338415633,
+			"name": "Create User",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "40d3a8fe-22f9-4b7c-60e7-e206dd3cb5f6",
+			"headers": "X-Auth-Token: F252E5849DDA11E5BD32344DE79C5AED\n",
+			"url": "http://localhost:8080/where/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1449656556788,
+			"name": "Home",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "4fb1ac5d-93e2-8687-e0b1-171086b14c66",
+			"headers": "X-Auth-Token: B52940CCB3B011E5BB7B2308BB96BBE5\nContent-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:8080/where/restaurant",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Bar1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "description of the first restaurant for response",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "avgprice",
+					"value": "10",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address",
+					"value": "Street false 123",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "lat",
+					"value": "43",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "lng",
+					"value": "45",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452623404366,
+			"name": "Create a Restaurant",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "50dbb4e7-fb80-42c4-8d69-8b7cfe2f3891",
+			"headers": "",
+			"url": "http://147.83.7.206:8080/where/users/F2528F769DDA11E5BD32344DE79C5AED",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1451338410277,
+			"name": "Get User by ID",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "65f2fbe7-834d-be63-04a9-6affb4da6f1b",
+			"headers": "",
+			"url": "http://localhost:8080/where/restaurant/32528FE09DDB11E5BD32344DE79C5AED/comments/6A8976A89DDB11E5BD32344DE79C5AED",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1449600550665,
+			"name": "Get Comment",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "6baac33b-22f8-0c46-73b3-ac4a63a0be26",
+			"headers": "X-Auth-Token: F256B2AE9DDA11E5BD32344DE79C5AED\nContent-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:8080/where/restaurant/2E7941F89EB111E5AD7C137926543200/comments/3C4AD2B09EB111E5AD7C137926543200",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "response",
+					"value": "this is a response 4",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1449692018571,
+			"name": "Response Comment",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "7432ad5e-525b-74cc-0e50-26821bccc440",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:8080/where/restaurant",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452623401921,
+			"name": "Restaurant Collection",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "7f2b819d-c272-dca4-dbf6-04674ac6464a",
+			"headers": "X-Auth-Token: B52940CCB3B011E5BB7B2308BB96BBE5\n",
+			"url": "http://localhost:8080/where/restaurant/FAEA0B04BBA411E5A95C0333F73E50D5/comments/0F2819BCBBA511E5A95C0333F73E50D5",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452875677505,
+			"name": "Delete CommentsCollection",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "8a3ba960-2d47-0d1b-100f-040d5001a78b",
+			"headers": "X-Auth-Token: F252E5849DDA11E5BD32344DE79C5AED\nContent-Type: application/vnd.dsa.where.restaurant+json\n",
+			"url": "http://localhost:8080/where/restaurant/32528FE09DDB11E5BD32344DE79C5AED",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1449600084042,
+			"name": "Update restaurant",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": [],
+			"rawModeData": "{\n  \"links\": null,\n  \"id\": \"6F4B98BE9B5C11E5811EEFBFEE6E5871\",\n  \"name\": \"Test Restaurant 1\",\n  \"description\": \"description of the first restaurant -- modified\",\n  \"avgprice\": 10,\n  \"owner\": \"48E0AED0986411E5A864653CFD4047A3\",\n  \"likes\": 0,\n  \"address\": \"Street false 123\",\n  \"phone\": \"123456\",\n  \"lat\": 43,\n  \"lng\": 45\n}"
+		},
+		{
+			"id": "c2d7b177-00bc-e99b-c2cd-025ad444cddd",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:8080/where/restaurant/32528FE09DDB11E5BD32344DE79C5AED",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1449600078800,
+			"name": "RestaurantByID",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "c689eb24-1816-9e25-1886-591652335c6c",
+			"headers": "Content-Type: application/vnd.dsa.where.user+json\nX-Auth-Token: C928CDDA975011E5AC1BB4BB8D93375C\n",
+			"url": "http://localhost:8080/where/users/C9203922975011E5AC1BB4BB8D93375C",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Update User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1448882247014,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "eb0442bf-28ba-6e49-6492-411343d5756d",
+			"rawModeData": "{\n  \"id\": \"C9203922975011E5AC1BB4BB8D93375C\",\n  \"loginid\": \"SpongeBob\",\n  \"email\": \"spongebob2@bikinibottom.com\",\n  \"fullname\": \"Spongebob Squarepants\"\n}"
+		},
+		{
+			"id": "cdc2a46f-3a4d-4853-d5b4-1f3d5501d506",
+			"headers": "X-Auth-Token: F256B2AE9DDA11E5BD32344DE79C5AED\nContent-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:8080/where/restaurant/2E7941F89EB111E5AD7C137926543200/comments",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "title",
+					"value": "test comment1 for response",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comment",
+					"value": "this is a comment1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "likes",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1449692021231,
+			"name": "Create a Comment",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "cf0ee4da-2aa2-dc92-be76-57628c8203e6",
+			"headers": "X-Auth-Token: de68e3f2975411e5ac1bb4bb8d93375c\n",
+			"url": "http://localhost:8080/where/users/DE62BCCA975411E5AC1BB4BB8D93375C",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Delete User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1448882675497,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "eb0442bf-28ba-6e49-6492-411343d5756d",
+			"rawModeData": ""
+		},
+		{
+			"id": "d0a7919d-b8dd-0505-b902-0c3d231cc166",
+			"headers": "",
+			"url": "http://147.83.7.206:8080/where/myresource",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1451338411813,
+			"name": "Got It!",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "d72ddb87-7934-88bd-908e-16a22d610be8",
+			"headers": "X-Auth-Token: B52940CCB3B011E5BB7B2308BB96BBE5\n",
+			"url": "http://localhost:8080/where/restaurant/search/Res",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452623400146,
+			"name": "Search by name",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		},
+		{
+			"id": "e55cc9dc-23a1-8cb7-8a6f-fc680ac5c417",
+			"headers": "",
+			"url": "http://147.83.7.206:8080/where/login",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "login",
+					"value": "alex",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "alex",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1451338414692,
+			"name": "Login",
+			"description": "",
+			"collectionId": "322df718-ca1d-0a70-53bb-1f3917870e99",
+			"responses": []
+		}
+	]
+}
