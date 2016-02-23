@@ -13,14 +13,30 @@ import java.util.List;
  * Created by LENOVO on 2016-02-22.
  */
 public class Note {
-    @InjectLinks({})
+    @InjectLinks({
+
+            @InjectLink(resource = WhereRootAPIResource.class, style = InjectLink.Style.ABSOLUTE, rel = "home", title = "Where Root API"),
+            @InjectLink(resource = NoteResource.class, style = InjectLink.Style.ABSOLUTE, rel = "current-notes", title = "Current notes"),
+            @InjectLink(resource = NoteResource.class, style = InjectLink.Style.ABSOLUTE, rel = "create-notes", title = "Create notes", type = MediaType.APPLICATION_FORM_URLENCODED),
+            @InjectLink(resource = NoteResource.class, method = "getNote", style = InjectLink.Style.ABSOLUTE, rel = "self note", title = "Note", bindings = @Binding(name = "id", value = "${instance.id}")),
+            @InjectLink(resource = LoginResource.class, style = InjectLink.Style.ABSOLUTE, rel = "logout", title = "Logout"),
+            @InjectLink(resource = UserResource.class, method = "getUser", style = InjectLink.Style.ABSOLUTE, rel = "user-profile", title = "User profile", bindings = @Binding(name = "id_wlas", value = "${instance.creator}")),
+           // @InjectLink(resource = RestaurantResource.class, method = "getRestaurant", style = InjectLink.Style.ABSOLUTE, rel = "restaurant-profile", title = "Restaurant profile", bindings = @Binding(name = "restaurant", value = "${instance.restaurant}")),
+            @InjectLink(resource = NoteResource.class, method = "getComments", style = InjectLink.Style.ABSOLUTE, rel = "next", title = "Newer comments", bindings = {@Binding(name = "timestamp", value = "${instance.creation_timestamp}"), @Binding(name = "before", value = "false")}),
+            @InjectLink(resource = NoteResource.class, method = "getComments", style = InjectLink.Style.ABSOLUTE, rel = "previous", title = "Older comments", bindings = {@Binding(name = "timestamp", value = "${instance.creation_timestamp}"), @Binding(name = "before", value = "true")}),
+
+
+
+    })
     private List<Link> links;
     private String id;
     private float lng;
     private float lat;
     private String id_kat;
+    private String name;
     private String uwaga;
     private String id_wlas;
+    private long creation_timestamp;
 
 
     public List<Link> getLinks() {
@@ -63,6 +79,15 @@ public class Note {
         this.id_kat = id_kat;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     public String getUwaga() {
         return uwaga;
     }
@@ -80,4 +105,7 @@ public class Note {
     }
 
 
+    public void setCreation_timestamp(long creation_timestamp) {
+        this.creation_timestamp = creation_timestamp;
+    }
 }

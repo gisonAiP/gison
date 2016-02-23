@@ -74,10 +74,12 @@ CREATE TABLE notes(
 	lng FLOAT( 10, 6 ) NOT NULL,
 	lat FLOAT( 10, 6 ) NOT NULL,
 	id_kat BINARY(16) NOT NULL,
+	name VARCHAR(100) NOT NULL,
 	uwaga VARCHAR(255) NOT NULL,
 	id_wlas BINARY(16) NOT NULL,
 	FOREIGN KEY (id_wlas)REFERENCES users(id) on delete cascade,
-	FOREIGN KEY (id_kat) REFERENCES kategoria(id) on delete cascade,
+	FOREIGN KEY (id_kat) REFERENCES categories(id) on delete cascade,
+	FOREIGN KEY (name) REFERENCES categories(name) on delete cascade,
 	PRIMARY KEY(id)
 );
 
