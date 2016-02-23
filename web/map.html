@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Dodaj uwagę</title>
+	
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />
+
+
+    <link href="note.css" rel="stylesheet">
+
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	
+	
+	
+	
+	
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        var map,vectorLayer,selectMarkerControl,selectedFeature;
+        var lat             =   50;
+            var lon            =    19;
+            var zoom        =   5;
+        var curpos = new Array();
+        var position;
+
+            var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+            var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+
+            var cntrposition       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+
+			
+			
+			
+			
+        function init()
+        {
+                map = new OpenLayers.Map("Map",{
+                            controls: 
+                            [
+                                        new OpenLayers.Control.PanZoomBar(),                        
+                            new OpenLayers.Control.LayerSwitcher({}),
+                            new OpenLayers.Control.Permalink(),
+                            new OpenLayers.Control.MousePosition({}),
+                            new OpenLayers.Control.ScaleLine(),
+                            new OpenLayers.Control.OverviewMap(),
+                                    ]
+                              }
+                                );
+                var mapnik      = new OpenLayers.Layer.OSM("MAP"); 
+                var markers     = new OpenLayers.Layer.Markers( "Markers" );
+
+            map.addLayers([mapnik,markers]);
+            map.addLayer(mapnik);
+            map.setCenter(cntrposition, zoom);
+
+            markers.addMarker(new OpenLayers.Marker(cntrposition));
+
+            var click = new OpenLayers.Control.Click();
+            map.addControl(click);
+
+            click.activate();
+};
+
+OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {               
+ defaultHandlerOptions: {
+  'single': true,
+  'double': false,
+  'pixelTolerance': 0,
+  'stopSingle': false,
+  'stopDouble': false
+ },
+
+ initialize: function(options) {
+  this.handlerOptions = OpenLayers.Util.extend(
+   {}, this.defaultHandlerOptions
+  );
+  OpenLayers.Control.prototype.initialize.apply(
+   this, arguments
+  );
+  this.handler = new OpenLayers.Handler.Click(
+   this, {
+    'click': this.trigger
+   }, this.handlerOptions
+  );
+ },
+ 
+ 
+ 
+
+ trigger: function(e) {
+  var lonlat = map.getLonLatFromPixel(e.xy);
+  lonlat1= new OpenLayers.LonLat(lonlat.lon,lonlat.lat).transform(toProjection,fromProjection);
+  alert("Wybrana wsp to: "+lonlat1.lon + "  " +lonlat1.lat);
+  document.getElementById("lat").value = lonlat1.lat;
+  document.getElementById("lng").value = lonlat1.lon;
+ }
+
+
+});
+</script>
+</head>
+
+<body onload='init();'>
+
+    <nav role="navigation" class="navbar navbar-default">
+
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="login.html" class="btn btn-default role="button">Log out</a>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <div id="Map" style="height: 650px" ></div>
+
+	<button class="btn btn-default input-sm" data-toggle="modal" data-target="#Register" id="button_register_modal" >
+									Dodaj uwagę
+								</button>
+								
+								
+								<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+										
+											<div class="modal-body">
+											
+						
+											<h2>Dodaj uwagę</h2>
+											
+											<br></br>
+								
+											<select class="chosen-select" name="myselect" id="myselect" style="margin-top: 10px;">
+											<option value="kategoria1" selected="selected">kategoria1</option>
+											<option value="kategoria2">kategoria2</option>
+											<option value="kategoria3">kategoria3</option>
+											</select>
+
+								
+												<br></br>
+											
+												<div>
+												<label for="uwaga" class="sr-only">Uwaga</label>
+												<textarea type="uwaga" id="uwaga" class="form-control" placeholder="Treść" autofocus rows="7"></textarea>
+												
+												<label for="lat" class="sr-only">Latitude</label>
+												<input type="text" id="lat" class="form-control" >
+												<label for="lng" class="sr-only">Longitude </label>
+												<input type="text" id="lng" class="form-control" >
+												</div>
+					
+											<div class="modal-footer">
+												<button type="button" class="btn btn-lg btn-primary btn-block" data-dismiss="modal" id="cancel_boton">Cancel</button>
+												<button type="button" class="btn btn-lg btn-primary btn-block" id="create_boton">Dodaj</button>
+											</div>
+										</div>
+									</div>
+								</div></div>
+
+		<div> 
+			<div id= "map"></div>
+			</div>
+
+    <!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="js/api.js"></script>
+    <script src="js/note.js"></script>
+	
+	
+
+</body>
+	
+	
+</html>

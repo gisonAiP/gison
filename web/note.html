@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />
+
+    <title>Dodaj uwagę</title>
+
+
+    <link href="note.css" rel="stylesheet">
+
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav role="navigation" class="navbar navbar-default">
+
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="login.html" class="btn btn-default role="button">Log out</a>
+        </div>
+        </div>
+    </nav>
+
+    <div id="container">
+
+     
+        <div style="clear:both;"></div>
+        <form class="form-admin">
+
+            <h2>Dodaj uwagę</h2>
+
+            <label for="uwaga" class="sr-only">Uwaga</label>
+            <input type="uwaga" id="uwaga" class="form-control" placeholder="Uwaga" autofocus>
+            <label for="lat" class="sr-only">Latitude</label>
+            <input type="text" id="lat" class="form-control" placeholder="Latitude  (Introduce here your latitude or click the button)" readonly="readonly">
+            <label for="lng" class="sr-only">Longitude </label>
+            <input type="text" id="lng" class="form-control" placeholder="Longitude (Introduce here your longitude or click the button)" readonly="readonly">
+
+            <button type="button" class="btn btn-lg btn-primary btn-block" id="create_boton">Create</button>
+
+			<button type="button" class="btn btn-lg btn-primary btn-block" onclick="getLocation()" id="location_boton">I'm seeing you</button>
+		
+		</form>
+        <div style="clear:both;"></div>
+    
+    </div>
+
+
+
+    <!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="js/api.js"></script>
+    <script src="js/note.js"></script>
+	<script src="js/admin.js"></script>
+
+
+</body>
+
+</html>

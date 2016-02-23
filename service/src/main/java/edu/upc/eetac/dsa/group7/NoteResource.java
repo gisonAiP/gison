@@ -2,8 +2,7 @@ package edu.upc.eetac.dsa.group7;
 
 import edu.upc.eetac.dsa.group7.dao.NoteDAO;
 import edu.upc.eetac.dsa.group7.dao.NoteDAOImp;
-import edu.upc.eetac.dsa.group7.dao.UserDAO;
-import edu.upc.eetac.dsa.group7.dao.UserDAOImpl;
+
 import edu.upc.eetac.dsa.group7.entity.AuthToken;
 import edu.upc.eetac.dsa.group7.entity.Note;
 import edu.upc.eetac.dsa.group7.entity.NoteCollection;
@@ -30,6 +29,7 @@ public class NoteResource {
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(WhereMediaType.WHERE_NOTE)
+
     public Note createNote(@FormParam("lng") Float lng, @FormParam("lat") Float lat, @FormParam("name") String name, @FormParam("uwaga") String uwaga, @Context UriInfo uriInfo) throws URISyntaxException {
         if (lng == null || lat == null || name == null || uwaga == null) {
             throw new BadRequestException("all parameters are mandatory");
@@ -56,9 +56,6 @@ public class NoteResource {
          return note;
 
     }
-
-
-
 
 
     @GET
